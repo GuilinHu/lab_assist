@@ -1,6 +1,6 @@
 # lab_assist
 
-A new Flutter project.
+Make labs easier.
 
 ## Getting Started
 
