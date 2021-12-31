@@ -1,4 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+
+import 'views/landing_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,16 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-          backgroundColor: Colors.black,
-      body: Center(
-        child: Text(
-          'Lab Assist',
-          style: TextStyle(fontSize: 40.0,
-          color: Colors.amber),
-        ),
-      ),
-    ));
+    return const CupertinoApp(home: LandingPage());
   }
 }
