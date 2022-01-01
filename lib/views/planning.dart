@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class PlanningPage extends StatefulWidget {
   const PlanningPage({Key? key}) : super(key: key);
@@ -8,13 +8,30 @@ class PlanningPage extends StatefulWidget {
 }
 
 class _PlanningPageState extends State<PlanningPage> {
+  int _count = 0;
+
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-        backgroundColor: CupertinoColors.systemBackground,
-        child: Column(children: const [
-          CupertinoNavigationBar(middle: Text('Your plans')),
-          Text('something', style: TextStyle(color: CupertinoColors.label)),
-        ]));
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Your plans'),
+      ),
+      body: SizedBox.expand(
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text('Counter: $_count'),
+              MaterialButton(
+                onPressed: () => setState(() {
+                  _count += 1;
+                }),
+                child: const Text('INCREASE'),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
